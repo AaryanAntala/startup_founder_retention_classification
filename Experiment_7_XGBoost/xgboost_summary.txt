@@ -1,0 +1,72 @@
+
+============================================================
+XGBOOST MODEL SUMMARY
+============================================================
+
+Dataset Information:
+- Training samples: 59608
+- Test samples: 14900
+- Number of features: 67
+
+Best Hyperparameters:
+- n_estimators: 946
+- max_depth: 10
+- learning_rate: 0.060245518647664295
+- subsample: 0.9336426502514603
+- colsample_bytree: 0.7281167002457108
+- colsample_bylevel: 0.9925894088012811
+- min_child_weight: 1
+- gamma: 4.197822795628047
+- reg_alpha: 4.40283179709386
+- reg_lambda: 4.569006326275219
+- scale_pos_weight: 1.0220614803362895
+- random_state: 42
+- tree_method: hist
+- n_jobs: -1
+- early_stopping_rounds: 50
+
+Validation Performance:
+- Accuracy: 0.7510
+- ROC AUC: 0.8404
+- Best Iteration: 524
+
+Feature Engineering Applied:
+- Revenue features (per year, log, sqrt, squared)
+- Age-related features (when joined, age groups, squared)
+- Experience and tenure features (ratios, indicators, squared)
+- Performance scores (ordinal encoding)
+- Composite scores (satisfaction, performance products)
+- Work-life balance indicators
+- Leadership and funding metrics
+- Location features (distance ratios, categories)
+- Education level encoding
+- Family features (dependents, family size)
+- Team size and startup stage encoding
+- Binary feature encoding
+- Interaction features (remote, innovation, leadership)
+- Gender and role encoding
+
+Top 5 Most Important Features:
+67. status_Single: 0.1812
+49. senior_stage: 0.1261
+50. remote_binary: 0.0959
+48. stage_numeric: 0.0934
+66. status_Married: 0.0409
+
+Preprocessing Steps:
+1. Handled missing values with median imputation
+2. Ordinal encoding for ordinal categorical variables
+3. One-hot encoding for nominal categorical variables
+4. Created polynomial and interaction features
+5. Log and sqrt transformations for skewed features
+
+Optuna Optimization:
+- Number of trials: 40
+- Cross-validation folds: 3
+- Best CV score: 0.7510
+
+Output Files:
+- xgboost_predictions_with_probs.csv
+- submission_xgboost.csv
+- xgboost_model.json
+============================================================

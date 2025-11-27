@@ -1,0 +1,51 @@
+
+============================================================
+LOGISTIC REGRESSION MODEL SUMMARY
+============================================================
+
+Dataset Information:
+- Training samples: 59608
+- Test samples: 14900
+- Number of features: 40
+
+Best Hyperparameters:
+- C: 0.0074526034164071695
+- penalty: elasticnet
+- solver: saga
+- max_iter: 271
+- class_weight: balanced
+- l1_ratio: 0.006305678794888081
+- random_state: 42
+
+Validation Performance:
+- Accuracy: 0.7405
+- ROC AUC: 0.8291
+
+Feature Engineering Applied:
+- Revenue per year with startup
+- Age-related features (young/senior founder indicators)
+- Experience ratio
+- Work-life balance indicators
+- Performance composite score
+- Location factors (distance from investor hub)
+- Leadership experience metrics
+- Family commitment features
+- Education level encoding
+- Team and reputation interactions
+- Binary feature combinations
+
+Preprocessing Steps:
+1. Handled missing values with median imputation
+2. Encoded categorical variables (one-hot encoding)
+3. Created interaction features
+4. Standardized features using StandardScaler
+
+Optuna Optimization:
+- Number of trials: 50
+- Cross-validation folds: 5
+- Best CV score: 0.7431
+
+Output Files:
+- logistic_regression_predictions_with_probs.csv
+- submission_logistic_regression.csv
+============================================================

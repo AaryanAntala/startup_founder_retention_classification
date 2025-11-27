@@ -1,0 +1,69 @@
+
+============================================================
+CATBOOST MODEL SUMMARY
+============================================================
+
+Dataset Information:
+- Training samples: 59608
+- Test samples: 14900
+- Number of features: 53
+- Categorical features: 19
+
+Best Hyperparameters:
+- iterations: 1001
+- learning_rate: 0.10132827434713908
+- depth: 4
+- l2_leaf_reg: 3.474656421326844
+- random_strength: 1.9068314292508226
+- bagging_temperature: 0.8784091254337011
+- border_count: 176
+- grow_policy: SymmetricTree
+- min_data_in_leaf: 9
+- auto_class_weights: Balanced
+- random_state: 42
+- verbose: 100
+
+Validation Performance:
+- Accuracy: 0.7531
+- ROC AUC: 0.8444
+- Best Iteration: 258
+
+Feature Engineering Applied:
+- Revenue-based features (per year, log transformed)
+- Age-related features (groups, young/senior indicators)
+- Experience and tenure features (ratios, categories)
+- Work-life balance composites
+- Performance and satisfaction interactions
+- Leadership and funding metrics
+- Location features (distance categories)
+- Family and personal features
+- Role and industry interactions
+- Education level indicators
+- Team and company features
+- Innovation and leadership combinations
+- Engagement score composite
+- Revenue to distance ratio
+
+Top 5 Most Important Features:
+15. startup_stage: 24.0320
+13. personal_status: 19.7191
+17. remote_operations: 15.1852
+51. balance_score: 6.0627
+9. funding_rounds_led: 5.2675
+
+Preprocessing Steps:
+1. Handled missing values with median imputation
+2. Kept categorical variables for CatBoost native handling
+3. Created interaction features
+4. Binned continuous variables into categories
+
+Optuna Optimization:
+- Number of trials: 30
+- Cross-validation folds: 3
+- Best CV score: 0.7550
+
+Output Files:
+- catboost_predictions_with_probs.csv
+- submission_catboost.csv
+- catboost_model.cbm
+============================================================

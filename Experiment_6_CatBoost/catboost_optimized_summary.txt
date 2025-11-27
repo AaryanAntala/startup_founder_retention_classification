@@ -1,0 +1,133 @@
+
+======================================================================
+OPTIMIZED CATBOOST MODEL SUMMARY
+======================================================================
+
+Dataset Information:
+- Training samples: 59611
+- Validation samples: 11923
+- Test samples: 14900
+- Total features: 104
+- Numeric features: 86
+- Categorical features: 18
+
+Target Distribution:
+- Training Stayed: 31265 (52.45%)
+- Training Left: 28346 (47.55%)
+
+Missing Value Handling:
+- monthly_revenue_generated: Median imputation
+- num_dependents: Filled with 0 (assume no dependents)
+- years_since_founding: Median imputation
+- work_life_balance_rating: Filled with 'Fair' (neutral)
+- venture_satisfaction: Filled with 'Medium' (neutral)
+- team_size_category: Mode imputation
+
+Feature Engineering (85+ features created):
+1. Ordinal Encodings (6 features):
+   - education_level_encoded, balance_score, satisfaction_score,
+   - performance_score, reputation_score, visibility_score
+
+2. Revenue Features (5 features):
+   - revenue_per_year, log_revenue, revenue_per_founding_year,
+   - is_high_revenue, is_low_revenue
+
+3. Age Features (5 features):
+   - age_when_joined, is_young_founder, is_senior_founder,
+   - is_prime_age, age_squared
+
+4. Experience Features (5 features):
+   - experience_ratio, is_new_founder, is_veteran_founder,
+   - tenure_revenue_ratio, years_to_founding_ratio
+
+5. Work-Life Balance Features (4 features):
+   - works_overtime, overtime_with_poor_balance,
+   - good_balance_no_overtime, balance_overtime_score
+
+6. Performance & Satisfaction Features (5 features):
+   - engagement_score, high_performer_satisfied,
+   - low_performer_unsatisfied, performance_satisfaction_gap,
+   - satisfaction_performance_product
+
+7. Leadership & Funding Features (5 features):
+   - has_led_funding, has_multiple_funding,
+   - funding_experience_score, avg_funding_per_year, funding_squared
+
+8. Location Features (5 features):
+   - near_investor_hub, very_far_from_hub, distance_squared,
+   - log_distance, revenue_distance_ratio
+
+9. Family & Personal Features (6 features):
+   - has_dependents, has_many_dependents, family_size,
+   - is_married, is_single, married_with_dependents
+
+10. Role & Industry Features (4 features):
+    - is_tech_role, is_finance_role, tech_finance_role, is_healthcare_role
+
+11. Education & Performance Features (3 features):
+    - high_education, education_performance_score, high_edu_high_perf
+
+12. Team & Company Features (6 features):
+    - is_large_team, is_small_team, excellent_reputation,
+    - poor_reputation, high_visibility, reputation_visibility_product
+
+13. Innovation & Leadership Features (6 features):
+    - has_leadership_scope, has_innovation_support, is_remote,
+    - innovation_leader, remote_innovator, leadership_no_innovation
+
+14. Stage Features (3 features):
+    - is_entry_stage, is_senior_stage, is_mid_stage
+
+15. Gender Features (2 features):
+    - is_female, is_male
+
+16. Complex Interaction Features (5 features):
+    - age_revenue_interaction, tenure_satisfaction_interaction,
+    - education_revenue_interaction, funding_revenue_interaction,
+    - balance_revenue_interaction
+
+17. Risk & Loyalty Scores (3 features):
+    - risk_score, loyalty_score, is_stable
+
+18. Founding Features (1 feature):
+    - founding_maturity_ratio
+
+19. Categorical Combinations (3 features):
+    - role_stage_combo, education_role_combo, gender_role_combo
+
+Best Hyperparameters:
+- iterations: 2465
+- learning_rate: 0.005029780055767944
+- depth: 8
+- l2_leaf_reg: 2.159546223041032
+- random_strength: 3.5981532077585463
+- bagging_temperature: 0.41353905757511467
+- border_count: 245
+- grow_policy: SymmetricTree
+- min_data_in_leaf: 85
+- subsample: 0.7776955847479806
+- colsample_bylevel: 0.8107548958049369
+- auto_class_weights: Balanced
+- leaf_estimation_method: Gradient
+- random_state: 42
+
+Validation Performance:
+- Accuracy: 0.755598
+- ROC AUC: 0.845067
+- Best Iteration: 2464
+
+Optimization Details:
+- Number of trials: 50
+- Cross-validation folds: 5
+- Best CV score: 0.753712
+
+Top 10 Most Important Features:
+
+
+Output Files:
+- catboost_optimized_predictions_with_probs.csv
+- submission_catboost_optimized.csv
+- catboost_optimized_model.cbm
+- catboost_optimized_summary.txt
+
+======================================================================
