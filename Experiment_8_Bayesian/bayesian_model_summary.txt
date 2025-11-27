@@ -1,0 +1,41 @@
+
+============================================================
+BAYESIAN MODEL TRAINING SUMMARY
+============================================================
+
+Dataset Information:
+- Training samples: 59608
+- Test samples: 14900
+- Number of features: 22
+- Target classes: ['Left' 'Stayed']
+
+Models Evaluated:
+1. Gaussian Naive Bayes (Optimized)
+2. Multinomial Naive Bayes (Optimized)
+3. Bernoulli Naive Bayes (Optimized)
+
+Best Model: Gaussian NB (Optimized)
+
+Best Model Performance:
+- Accuracy:  0.7074
+- Precision: 0.7470
+- Recall:    0.6687
+- F1 Score:  0.7057
+- ROC AUC:   0.7849
+
+Optimized Hyperparameters:
+- Gaussian NB:     {'var_smoothing': 3.074134311470462e-06}
+- Multinomial NB:  {'alpha': 0.13903415209388137, 'fit_prior': False}
+- Bernoulli NB:    {'alpha': 0.5858743514913339, 'binarize': 0.995416213707797, 'fit_prior': True}
+
+Output Files:
+- bayesian_submission.csv
+- bayesian_submission_with_proba.csv
+- model_evaluation_metrics.csv
+- model_metrics_comparison.png
+- confusion_matrices.png
+- roc_curves.png
+
+============================================================
+TRAINING COMPLETED SUCCESSFULLY!
+============================================================
